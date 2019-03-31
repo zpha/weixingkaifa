@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class MessageReceiverController {
 @GetMapping
 public String echo( 
-	@RequestParam("signature") String signature,
-	@RequestParam("timestamp")String timestamp,
-	@RequestParam("nonce")String nonce,
-	@RequestParam("echostr")String echostr
+		@RequestParam("signature") String signature,
+		@RequestParam("timestamp")String timestamp,
+		@RequestParam("nonce")String nonce,
+		@RequestParam("echostr")String echostr
+	
 	){
 		
 	
