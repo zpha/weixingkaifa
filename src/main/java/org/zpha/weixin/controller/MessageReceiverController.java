@@ -89,7 +89,7 @@ public class MessageReceiverController {
 					// 比如文本消息、图片消息处理方式不同，所以使用前缀来隔离： text* 表示文本消息、image* 表示图片消息。
 					// 建议在多人共享一个服务器的时候，每个人使用不同的数据库实例即可，并且建议在通道名称之前加上反向代理的前缀。
 
-					String channel = "kemao_1_" + inMessage.getMsgType();
+					String channel = "zph_" + inMessage.getMsgType();
 
 					// 消息内容要自己序列化才能放入队列中
 					ByteArrayOutputStream out = new ByteArrayOutputStream();// 输出流
