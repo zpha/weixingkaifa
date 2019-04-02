@@ -51,10 +51,12 @@ public class MessageReceiverController {
 	// @PostMapping专门用于处理POST请求。
 	// 消息的格式是XML形式的字符串，整个消息放入了请求体里面。
 	@PostMapping
-	public String onMessage(@RequestParam("signature") String signature, //
-			@RequestParam("timestamp") String timestamp, //
-			@RequestParam("nonce") String nonce, //
-			@RequestBody String xml) {
+	public String onMessage(
+			@RequestParam("signature") String signature, 
+			@RequestParam("timestamp") String timestamp, 
+			@RequestParam("nonce") String nonce, 
+			@RequestBody String xml) 
+	{
 		LOG.debug("收到用户发送给公众号的信息: \n-----------------------------------------\n"
 				+ "{}\n-----------------------------------------\n", xml);
 
@@ -89,7 +91,7 @@ public class MessageReceiverController {
 					// 比如文本消息、图片消息处理方式不同，所以使用前缀来隔离： text* 表示文本消息、image* 表示图片消息。
 					// 建议在多人共享一个服务器的时候，每个人使用不同的数据库实例即可，并且建议在通道名称之前加上反向代理的前缀。
 
-					String channel = "zpha_" + inMessage.getMsgType();
+					String channel = "zph_" + inMessage.getMsgType();
 
 					// 消息内容要自己序列化才能放入队列中
 					ByteArrayOutputStream out = new ByteArrayOutputStream();// 输出流
