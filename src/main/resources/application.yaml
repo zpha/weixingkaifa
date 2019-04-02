@@ -1,7 +1,17 @@
 
-spring.datasource:
-   url: jdbc:mysql://127.0.0.1:3306/zph?useSSL=false&serverTimezone=CST&allowPublicKeyRetrieval=true
-   username: zph
-   password: 1234
+spring:
+   datasource:
+      url: jdbc:mysql://127.0.0.1:3306/zph?useSSL=false&serverTimezone=CST&allowPublicKeyRetrieval=true
+      username: zph
+      password: 1234
+   
+redis:
+      # 这里换自己的IP
+      host: 120.79.188.146
+      port: 6379
+      database: 15
 
+
+# 修改运行时的端口号，因为一个端口号只能被一个人使用。
+# 如果多个人使用一台服务器，自然要使用不同的端口！
 server.port: 8081
