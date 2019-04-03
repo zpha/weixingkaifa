@@ -2,10 +2,14 @@ package org.zpha.weixin.service;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
 import org.zpha.weixin.domain.InMessage;
 import org.zpha.weixin.domain.image.ImageInMessage;
+import org.zpha.weixin.domain.link.LinkInMessage;
+import org.zpha.weixin.domain.location.LocationInMessage;
+import org.zpha.weixin.domain.shortvideo.ShortvideoInMessage;
 import org.zpha.weixin.domain.text.TextInMessage;
+import org.zpha.weixin.domain.video.VideoInMessage;
+import org.zpha.weixin.domain.voice.VoiceInMessage;
 
 public class MessageTypeMapper {
 
@@ -15,14 +19,12 @@ public class MessageTypeMapper {
 	static {
 		typeMap.put("text", TextInMessage.class);
 		typeMap.put("image", ImageInMessage.class);
-
-		typeMap.put("vioce", TextInMessage.class);
-		typeMap.put("video", TextInMessage.class);
-		typeMap.put("location", TextInMessage.class);
-		typeMap.put("shortvideo", TextInMessage.class);
-		typeMap.put("link", TextInMessage.class);
-
-		typeMap.put("event", TextInMessage.class);
+		typeMap.put("voice", VoiceInMessage.class);
+		typeMap.put("video", VideoInMessage.class);
+		typeMap.put("location", LocationInMessage.class);
+		typeMap.put("shortvideo", ShortvideoInMessage.class);
+		typeMap.put("link", LinkInMessage.class);
+		//typeMap.put("event", TextInMessage.class);
 	}
 
 	// 通过消息类型获取对应的类
