@@ -15,7 +15,7 @@
 	<!-- 分组的ID，域名倒写 -->
 	<groupId>org.zpha</groupId>
 	<!-- 项目名称，jar文件的名称 -->
-	<artifactId>weixin</artifactId>
+	<artifactId>weixingkaifa</artifactId>
 	<!-- 本项目的版本号 -->
 	<version>0.0.1-SNAPSHOT</version>
 	<!-- 项目的显示名称，但是在Eclipse里面不生效 -->
@@ -105,6 +105,17 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<!-- 可以打包成一个可执行jar文件 -->
+					<executable>true</executable>
+					<!-- fork为true的时候 -->
+					<!-- 将可以使用 mvn spring-boot:start 启动程序 -->
+					<!-- 并且可以使用 mvn spring-boot:stop 停止程序 -->
+					<fork>true</fork>
+					<!-- 每个fork出来的进程都会需要一个JMX端口，不能重复 -->
+					<!-- 建议：每个人使用一段的端口号，比如阿宝使用 9001~9099，小宝使用9100~9199 -->
+					<jmxPort>9100</jmxPort>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

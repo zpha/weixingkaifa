@@ -1,4 +1,5 @@
 package org.zpha.weixin.controller;
+
 import java.io.StringReader;
 
 import javax.xml.bind.JAXB;
