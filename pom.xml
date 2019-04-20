@@ -15,6 +15,7 @@
 	<!-- 分组的ID，域名倒写 -->
 	<groupId>org.zpha</groupId>
 	
+	
 	<!-- 项目名称，jar文件的名称 -->
 	<artifactId>weixingkaifa</artifactId>
 	<!-- 本项目的版本号 -->
